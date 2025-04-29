@@ -2,6 +2,39 @@
     margin: 5px;
     padding: 0px;
 }
+
+$ancho100: (100%);
+$colorLetra: color(#003366);
+$centrado: margin(auto);
+$letraNegrita:(510px);
+$tamanoFuente: 23px;
+$colorLetra2: #000000;
+
+
+@mixin mixin1($colorLetra) {
+    color: $colorLetra;
+    text-align: center;
+    margin: auto;
+}
+
+@mixin mixin2($colorLetra2) {
+    color: $colorLetra;
+    text-align: center;
+
+}
+
+@mixin mixin3{
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+@mixin mixin4 {
+    color: $colorLetra;
+    text-align: center;
+}
+
+
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     color: #003366
@@ -93,11 +126,11 @@ body{
 
 .barra_redes_nueva h1{
     font-size: 24px;
-    color: #003366
+    color: $colorLetra
 }
 .barra_redes_nueva label{
     font-size: 20px;
-    color: #003366
+    color: $colorLetra
 }
 
 
@@ -112,7 +145,7 @@ body{
 .col-md-3 a{
     text-decoration: none; /* subrayado al link */
     font-size: 20px;
-    color: #003366
+    color: $colorLetra
 }
 
 .col-md-3 ul li{
@@ -184,7 +217,7 @@ button {
     align-items: center;
     text-align: center;
     border: 2px solid #000000;
-    color: #003366 ;
+    color: $colorLetra;
     background-color: aliceblue;
     font-size: 30px;
     width: 98%;
@@ -192,7 +225,7 @@ button {
 
 .formulario_configuracion{
     font-family: Arial, Helvetica, sans-serif;
-    color: #003366;
+    color: #000000;
     font-size: 20px;
     margin-top: 20px;
     flex-direction: row;
@@ -225,6 +258,8 @@ button {
     margin: auto;
     font-size: 20px;
     margin-top: 60px;
+
+    
     
 }
 .card_nosotros_2 img{
@@ -250,7 +285,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: #003366;
+    color: $colorLetra;
     border: #000000 2px solid;
     width: 30%;
     gap: 20px;
@@ -261,14 +296,17 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 80%;
+    @include mixin3;
+
     align-items: center;
     text-align: center;
-    width: 80%;
     margin: auto;
+
 }
 
 .personas_presentacion img{
-    width: 100%;
+    width: $ancho100;
     height: 200px;
     border-radius: 50%;
     border: #000000 2px solid;
@@ -278,11 +316,13 @@ button {
 
 .personas_presentacion p{
     font-size: 20px;
-    color: #003366;
+    color: $colorLetra;
     border: #000000 2px solid;
-    width: 100%;
+    width: $ancho100;
     margin: auto;
     padding: 5px;
+
+    @include mixin1 ($colorLetra)
 
 }
 
@@ -307,7 +347,7 @@ button {
     margin: auto;
 }
 .titulo_vermas h2{
-    color: #003366;
+    color: $colorLetra;
     font-size: 35px;
     text-align: center;
     justify-content: center;
@@ -325,9 +365,9 @@ button {
 }
 .card_de_abajo1 p{
     font-size: 20px;
-    color: #003366;
-    width: 100%;
-    margin: auto;
+    color: $colorLetra;
+    width: $ancho100;
+    margin: $centrado;
     padding: 10px;
 
 }
@@ -335,17 +375,20 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 85%;
+    margin-top: 20px;
+    @include mixin3;
+
     align-items: center;
     text-align: center;
-    width: 85%;
     margin: auto;
-    margin-top: 20px;
+
 }
 
 .imagen_card1 img{
-    width: 100%;
+    width: $ancho100;
     height: 200px;
-    margin: auto;
+    margin: $centrado;
     border-radius: 8px;
 }
 
@@ -356,6 +399,8 @@ button {
     align-items: center;
     text-align: center;
     margin: auto;
+
+    
 }
 
 
@@ -387,14 +432,17 @@ button {
 
 }
 .beneficios{
+
+    @include mixin2($colorLetra2);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
     width: 100%;
     margin: auto;
     margin-top: 80px;
+
+
 }
 .imagen_card2 {
     display: flex;
@@ -415,37 +463,36 @@ button {
 }
 .beneficios h5{
     font-size: 24px;
-    color: #003366;
+    color: $colorLetra;
 }
 
 .beneficios p{
-    font-size: 21px;
-    color: #003366;
+    font-size: $tamanoFuente;
     width: 100%;
     margin: auto;
     padding: 10px;
-    text-align: center;
+    @include mixin4;
 }
 
 .negrita{
     font-weight: 510;
-    color: #003366;
+    color: $colorLetra;
 }
 
 .mi-boton {
-    color: #003366 !important; /* !important es necesario para que tu estilo gane contra el de Bootstrap */
+    color: $colorLetra !important; /* !important es necesario para que tu estilo gane contra el de Bootstrap */
     background-color: rgb(174, 220, 240) !important;
     border-color: #5e1919 !important;
 }
 
 .mi_boton2{
     color: #003366 !important; /* !important es necesario para que tu estilo gane contra el de Bootstrap */
-    background-color: rgb(226, 237, 187) !important;
+    background-color: rgb(184, 204, 110) !important;
     border-color: #5e1919 !important;
 }	
 
 .mi_boton3{
-    color: #003366 !important; /* !important es necesario para que tu estilo gane contra el de Bootstrap */
+    color: $colorLetra !important; /* !important es necesario para que tu estilo gane contra el de Bootstrap */
     background-color: #cbbdbd !important;
     border-color: #5e1919 !important;
 }
@@ -472,7 +519,7 @@ button {
 .col-md-3 a{
     text-decoration: none; /* subrayado al link */
     font-size: 20px;
-    color: #003366
+    color: $colorLetra
 }
 
 .col-md-3 ul li{
@@ -495,7 +542,7 @@ button {
 .col-md-5 a{
     text-decoration: none; /* subrayado al link */
     font-size: 20px;
-    color: #003366
+    color: $colorLetra
 }
 
 .col-md-5 ul li{
@@ -505,21 +552,14 @@ button {
 .col-md-4 a{
     text-decoration: none; /* subrayado al link */
     font-size: 20px;
-    color: #003366
+    color: $colorLetra
 }
 
 .col-md-4 ul li{
     list-style: none;  /* para quitarle el puntito al coso de la lista  */
 }
 
-$imegnesAncho:width(100%);
-$colorLetra: color(#003366);
-$imagenesCard: width(100%);
-$imagenCarrusel: width(100%);
-$boton1:;
-$boton2:;
-$boton3:;
-$imagenes :;
+
 
 
 
